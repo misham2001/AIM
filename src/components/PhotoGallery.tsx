@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FiX } from "react-icons/fi";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-
 // Type definition for a card
 interface Card {
   id: number;
@@ -40,7 +39,7 @@ const PhotoGallery: React.FC = () => {
     },
     {
       id: 3,
-      title: "Urban Loft",
+      title: "Shrismas",
       description: "Modern city living at its finest.",
       mainImage: "images.unsplash.com/photo-1505873242700-f289a29e1e0f",
       additionalImages: [

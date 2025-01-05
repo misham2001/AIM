@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Menu, X, Church } from 'lucide-react';
+
+import logo from '../Assert/Image/logo.png';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,16 +27,30 @@ export function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection('events')} className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+            <a onClick={() => scrollToSection('events')} className="group relative inline-block mr-5 p-2.5 outline-none no-underline bg-gradient-to-br from-purple-500 to-red-500 text-lg text-transparent bg-clip-text tracking-wide focus:outline-none transition-all duration-300 transform hover:from-gray-700 hover:to-gray-700">
+              {/* a::before */}
+              <span className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-br from-purple-500 to-red-500 opacity-0 transition-all duration-300 transform -translate-y-2.5 group-hover:opacity-100 group-hover:translate-y-0" aria-hidden="true" />
               Events
-            </button>
-            <button onClick={() => scrollToSection('prayer-request')} className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+              {/* a::after */}
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-br from-purple-500 to-red-500 opacity-0 transition-all duration-300 transform translate-y-2.5 group-hover:opacity-100 group-hover:translate-y-0" aria-hidden="true" />
+            </a>
+
+            <a onClick={() => scrollToSection('prayer-request')} className="group relative inline-block mr-5 p-2.5 outline-none no-underline bg-gradient-to-br from-purple-500 to-red-500 text-lg text-transparent bg-clip-text tracking-wide focus:outline-none transition-all duration-300 transform hover:from-gray-700 hover:to-gray-700">
+              {/* a::before */}
+              <span className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-br from-purple-500 to-red-500 opacity-0 transition-all duration-300 transform -translate-y-2.5 group-hover:opacity-100 group-hover:translate-y-0" aria-hidden="true" />
               Prayer Request
-            </button>
-            <button onClick={() => scrollToSection('contact')} className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
-              Contact Us
-            </button>
-            <img src='' alt="logo" className="h-10 w-auto rounded-2xl" />
+              {/* a::after */}
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-br from-purple-500 to-red-500 opacity-0 transition-all duration-300 transform translate-y-2.5 group-hover:opacity-100 group-hover:translate-y-0" aria-hidden="true" />
+            </a>
+
+            <a onClick={() => scrollToSection('photoGallery')} className="group relative inline-block mr-5 p-2.5 outline-none no-underline bg-gradient-to-br from-purple-500 to-red-500 text-lg text-transparent bg-clip-text tracking-wide focus:outline-none transition-all duration-300 transform hover:from-gray-700 hover:to-gray-700">
+              {/* a::before */}
+              <span className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-br from-purple-500 to-red-500 opacity-0 transition-all duration-300 transform -translate-y-2.5 group-hover:opacity-100 group-hover:translate-y-0" aria-hidden="true" />
+              Photo Gallery
+              {/* a::after */}
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-br from-purple-500 to-red-500 opacity-0 transition-all duration-300 transform translate-y-2.5 group-hover:opacity-100 group-hover:translate-y-0" aria-hidden="true" />
+            </a>
+            <img src={logo} alt="logo" className="h-20 w-auto rounded-2xl" />
           </div>
 
           {/* Mobile Menu Button */}
