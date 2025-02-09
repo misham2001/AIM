@@ -1,96 +1,88 @@
-import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
+import React, { useState } from "react";
 
 const PhotoGallery = () => {
+  const slides = [
+    "/src/Assert/Im1.jpg",
+    "/src/Assert/Im2.jpg",
+    "/src/Assert/Im3.jpg",
+    "/src/Assert/Im4.jpg",
+    "/src/Assert/Im5.jpg",
+    "/src/Assert/Im6.jpg",
+    // "/src/Assert/Im1.jpg",
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const slidesToShow = 3;
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : slides.length - slidesToShow));
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev < slides.length - slidesToShow ? prev + 1 : 0));
+  };
+
   return (
-    <div className="">
-     
-      <HorizontalScrollCarousel />
-      
-    </div>
-  );
-};
-
-const HorizontalScrollCarousel = () => {
-  const targetRef = useRef<HTMLDivElement | null>(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
-
-  return (
-    <section ref={targetRef} className="relative h-[200vh] bg-neutral-900">
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-4">
-          {cards.map((card) => {
-            return <Card card={card} key={card.id} />;
-          })}
-        </motion.div>
+    <div className="relative w-full  lg:max-w-6xl mx-auto mt-6">
+      <h1 className="text-2xl font-semibold">Photo Gallery</h1>
+      <div className="overflow-hidden rounded-lg">
+        <div
+          className="flex transition-transform duration-700"
+          style={{ transform: `translateX(-${currentIndex * (100 / slidesToShow)}%)` }}
+        >
+          {slides.map((slide, index) => (
+            <div key={index} className="flex-none lg:w-1/3 px-1">
+              <div className="flex justify-center items-center h-80">
+                <a href="">
+                  <img
+                    src={slide}
+                    alt={`Slide ${index + 1}`}
+                    className="w-full h-72 object-cover rounded-lg"
+                  />
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </section>
-  );
-};
 
-const Card = ({ card }: { card: CardType }) => {
-  return (
-    <div
-      key={card.id}
-      className="group relative h-[450px] w-[450px] overflow-hidden bg-neutral-200"
-    >
-      <div
-        style={{
-          backgroundImage: `url(${card.url})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-        className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
-      ></div>
-      
+      <button
+        onClick={prevSlide}
+        className="absolute inset-y-0 start-0 flex items-center justify-center w-10 h-full text-gray-800"
+      >
+        <svg
+          className="w-5 h-5"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="m15 18-6-6 6-6"></path>
+        </svg>
+      </button>
+
+      <button
+        onClick={nextSlide}
+        className="absolute inset-y-0 end-0 flex items-center justify-center w-10 h-full text-gray-800"
+      >
+        <svg
+          className="w-5 h-5"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </button>
     </div>
   );
 };
 
 export default PhotoGallery;
-
-type CardType = {
-  url: string;
-  id: number;
-};
-
-const cards: CardType[] = [
-  {
-    url: "/src/Assert/Im5.jpg",
-    id: 1,
-  },
-  {
-    url: "/src/Assert/Im2.jpg",
- 
-    id: 2,
-  },
-  {
-    url: "/src/Assert/Im3.jpg",
- 
-    id: 3,
-  },
-  {
-    url: "/src/Assert/Im4.jpg",
-   
-    id: 4,
-  },
-  {
-    url: "/src/Assert/Im1.jpg",
-  
-    id: 5,
-  },
-  {
-    url: "/src/Assert/Im6.jpg",
- 
-    id: 6,
-  },
-  {
-    url: "/src/Assert/Im1.jpg",
-    
-    id: 7,
-  },
-];
