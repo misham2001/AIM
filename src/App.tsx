@@ -4,7 +4,7 @@ import { Hero } from './components/Hero';
 import { Events } from './components/Events';
 import { PrayerRequest } from './components/PrayerRequest';
 import Footer from './components/Footer';
-import PhotoGallery from './components/PhotoGallery';
+// import PhotoGallery from './components/PhotoGallery';
 import { TextParallaxContentExample } from './components/TextParallaxContentExample';
 
 function App() {
@@ -18,9 +18,9 @@ function App() {
         <section id="events" className="py-16">
           <Events />
         </section>
-        <section id="photoGallery" className="">
+        {/* <section id="photoGallery" className="">
           <PhotoGallery/>
-        </section>
+        </section> */}
         <section id="photoGallery" className="py-16">
           <TextParallaxContentExample/>
         </section>
