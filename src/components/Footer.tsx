@@ -5,10 +5,9 @@ function Footer() {
   return (
     <div>
       <footer className="w-full py-6 px-4 bg-slate-500">
-        {/* Container */}
         <h2 className="sr-only">Footer</h2>
         <div className="mx-auto max-w-7xl flex flex-col items-center text-gray-200">
-          <div className="w-full flex flex-col md:flex-row flex-wrap justify-between items-start gap-8">
+          <div className="w-full flex flex-col md:flex-row flex-wrap justify-between items-center md:items-start gap-8">
             {/* :SOCIAL NETWORKS */}
             <div className="py-4 px-2 flex flex-wrap justify-center md:justify-start">
               {/* Social Icons */}
@@ -115,57 +114,24 @@ function Footer() {
 
             {/* :ADDRESS */}
             <div className="px-2 text-center md:text-left">
-              <FontAwesomeIcon
-                icon={faMapMarkerAlt}
-                className="text-gray-300 text-xl"
-              />
-              <a
-                href="https://goo.gl/maps/oNqHxFb8JUCqxqav6"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="pl-2 block md:inline"
-              >
-                Address: Ashwas Church of God, Polachery, Mambakkam, Tamil Nadu
-                600127
+              <FontAwesomeIcon icon={faMapMarkerAlt} className="text-gray-300 text-xl" />
+              <a href="https://goo.gl/maps/oNqHxFb8JUCqxqav6" target="_blank" rel="noopener noreferrer" className="pl-2 block md:inline">
+                Address: Ashwas Church of God, Polachery, Mambakkam, Tamil Nadu 600127
               </a>
             </div>
 
             {/* :CONTACT */}
             <div className="px-2 text-center md:text-left">
-              {/* Email */}
               <p className="flex items-center justify-center md:justify-start text-xs text-gray-300 font-medium tracking-wide">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="mr-2 h-5 w-5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
-                <a
-                  href="mailto:ashwasministory@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  ashwasministory@gmail.com
-                </a>
+                <a href="mailto:ashwasministory@gmail.com" target="_blank" rel="noopener noreferrer">ashwasministory@gmail.com</a>
               </p>
-              {/* Phone */}
               <p className="flex items-center justify-center md:justify-start text-xs text-gray-300 font-bold">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="mr-2 h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  />
+                <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 <span>209-217-2459</span>
               </p>
@@ -173,11 +139,8 @@ function Footer() {
           </div>
 
           {/* :COPYRIGHT */}
-          <p className="pt-10 text-sm text-gray-300 text-center">
-            &copy;2025, Ashwas Church of God
-          </p>
+          <p className="pt-10 text-sm text-gray-300 text-center">&copy;2025, Ashwas Church of God</p>
         </div>
-       
       </footer>
     </div>
   );
