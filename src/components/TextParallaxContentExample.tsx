@@ -6,11 +6,11 @@ import Ministry from "../Assert/Image/ministry.jpg";
 
 export const TextParallaxContentExample = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white container mx-auto px-4">
       <TextParallaxContent
         imgUrl={Outreach}
         subheading="Our Activity"
-        heading="Outreach Program"
+        heading="Outreach Program" 
       >
         <OutreachContent />
       </TextParallaxContent>

@@ -21,7 +21,7 @@ export function Hero() {
   }, [images.length]);
 
   return (
-    <div className="relative pt-16">
+    <div className="container mx-auto px-4 relative pt-16">
       <div
         className="h-[650px] bg-cover bg-center transition-all duration-1000"
         style={{

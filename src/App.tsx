@@ -18,7 +18,7 @@ function App() {
         <section id="events" className="py-16">
           <Events />
         </section>
-        <section id="photoGallery" className="py-16">
+        <section id="photoGallery" className="">
           <PhotoGallery/>
         </section>
         <section id="photoGallery" className="py-16">
