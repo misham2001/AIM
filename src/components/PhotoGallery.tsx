@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const PhotoGallery = () => {
   const slides = [
-    "/src/Assert/Im1.jpg",
+    "https://media-hosting.imagekit.io//dad89f2ae095427e/Im1.JPG?Expires=1833732071&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=ThmvRoGc5a0cL3kEB9vK7eREswl8atH1O66MsRuNQ2M-d~H8LpZdxlqqy28NIPuKQWXgP9ZSuwYHzLCnPhfMtFCkFYDDcKRhovkPE6ueCilV3ARajU~pzAgMfeRRaHGDVDWLSZAyTanQaGtwO4V61bmZdVSKX3BTu-RQfDp9IoZpWmEqP3IvbRVksEXfyy~w5y~dnq1Qt7WIzmKHkHXairetU5FqhrI939aj89BDm65Q3pynp2lPAaNiW9MKiNTH~8y~YJ2iUVX4ADDoCiO6NKFb9pdhww86DCqUXMyOCQ~hCVkO0j8P~CGO1U5JByvrPC-J5DKWlEL-vUCl6ja4tA__",
     "/src/Assert/Im2.jpg",
     "/src/Assert/Im3.jpg",
     "/src/Assert/Im4.jpg",
@@ -25,7 +25,7 @@ const PhotoGallery = () => {
   return (
     <div className="relative w-full  lg:max-w-6xl mx-auto mt-6">
       <h1 className="text-2xl font-semibold">Photo Gallery</h1>
-      <div className="overflow-hidden rounded-lg">
+      <div className="overflow-hidden rounded-lg mt-4">
         <div
           className="flex transition-transform duration-700"
           style={{ transform: `translateX(-${currentIndex * (100 / slidesToShow)}%)` }}
