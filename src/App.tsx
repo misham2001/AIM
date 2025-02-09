@@ -24,7 +24,7 @@ function App() {
         <section id="photoGallery" className="py-16">
           <TextParallaxContentExample/>
         </section>
-        <section id="prayer-request" className="bg-gray-50 py-16">
+        <section id="prayer-request" className="bg-gray-50 ">
           <PrayerRequest />
         </section>
       
