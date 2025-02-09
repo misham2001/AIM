@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const PhotoGallery = () => {
   const slides = [
-    "/src/Assert/Im1.jpg",
+    "https://drive.google.com/file/d/1D9qZBS8UmIZWXI3uHwovQ_Aa8rWHCCTp/view?usp=drive_link",
     "/src/Assert/Im2.jpg",
     "/src/Assert/Im3.jpg",
     "/src/Assert/Im4.jpg",
