@@ -27,7 +27,7 @@ app.post("/send-email", async (req, res) => {
         // Email content
         const mailOptions = {
             from: process.env.EMAIL_USER, // Sender's email
-            to: "misham.d24@gmail.com", // Receiver's email
+            to: "ashwasministory@gmail.com", // Receiver's email
             subject: `Prayer Request from ${name}`,
             text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
         };
