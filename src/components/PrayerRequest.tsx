@@ -4,48 +4,48 @@ import prayerhand from "../Assert/prayerhand.png"
 import axios from "axios";
 export function PrayerRequest() {
 
-const initialFormData = { name: "", email: "", message: "" };
-const [formData, setFormData] = useState(initialFormData);
+  const initialFormData = { name: "", email: "", message: "" };
+  const [formData, setFormData] = useState(initialFormData);
 
-const [popup, setPopup] = useState({ show: false, message: "" });
+  const [popup, setPopup] = useState({ show: false, message: "" });
 
-const handleChange = (e: { target: { name: any; value: any } }) => {
-  const { name, value } = e.target;
-  setFormData((prevData) => ({
-    ...prevData,
-    [name]: value,
-  }));
-};
+  const handleChange = (e: { target: { name: any; value: any } }) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
-// Handle form submission
-const handleSubmit = async (e: { preventDefault: () => void }) => {
-  e.preventDefault();
+  // Handle form submission
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
 
-  try {
-    const response = await axios.post("http://localhost:5000/send-email", formData);
+    try {
+      const response = await axios.post("http://localhost:5000/send-email", formData);
 
-    if (response.status === 200) {
-      setPopup({ show: true, message: response.data.message });
-      setFormData(initialFormData); // Clear form data after successful submission
+      if (response.status === 200) {
+        setPopup({ show: true, message: response.data.message });
+        setFormData(initialFormData); // Clear form data after successful submission
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setPopup({ show: true, message: "Failed to send email." });
     }
-  } catch (error) {
-    console.error("Error:", error);
-    setPopup({ show: true, message: "Failed to send email." });
-  }
-};
+  };
 
-const closePopup = () => {
-  setPopup({ show: false, message: "" });
-};
+  const closePopup = () => {
+    setPopup({ show: false, message: "" });
+  };
 
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div className="container mx-auto px-4  sm:px-6 lg:px-8">
       <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">Contact</h2>
 
-      <div className="grid lg:grid-cols-2 gap-8 items-start justify-center">
+      <div className="grid lg:grid-cols-2 gap-8 items-start justify-center mb-10">
         <div>
-        <form
+          <form
             className="bg-gray-200 p-6 sm:p-8 rounded-lg shadow-lg animate__animated animate__fadeIn"
             onSubmit={handleSubmit}
           >
@@ -126,7 +126,7 @@ const closePopup = () => {
             </div>
           )}
         </div>
-      
+
         <div className="flex flex-col">
           <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg text-center font-mono">
             <p className="text-xl font-bold mb-4">1 John 5:14</p>
@@ -135,11 +135,8 @@ const closePopup = () => {
             </p>
           </div>
 
-          <div>
-            
-          </div>
 
-          <div className="flex justify-center mt-14">
+          <div className="flex justify-center mt-14 mb-10">
             <div
               className={`relative w-72 h-72 bg-white p-1 rounded-xl shadow-[rgba(96,75,74,0.1882352941)_0px_70px_30px_-50px] transition-all ease-in-out duration-500 ${isHovered ? "border-4 border-[#fbb9b6] hover:rounded-tl-[55px]" : "border-transparent"
                 }`}
@@ -179,7 +176,6 @@ const closePopup = () => {
               </div>
             </div>
           </div>
-          
 
         </div>
       </div>
