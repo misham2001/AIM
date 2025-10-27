@@ -12,8 +12,15 @@ export function Events() {
     {
       title: 'Out Reach',
       date: 'Every Sunday',
-      time: '5:00 PM',
+      time: '7:00 PM',
       place: 'Perumbakkam',
+      description: ''
+    },
+     {
+      title: 'Sunday School',
+      date: 'Every Sunday',
+      time: '5:00 PM',
+      place: 'Take Place in Ashwas Church of God',
       description: ''
     },
     {

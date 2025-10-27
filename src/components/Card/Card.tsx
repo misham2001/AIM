@@ -8,7 +8,7 @@ const Card = () => {
         <div className="bg">
         <div>
                 <h2 className='text-xl font-semibold text-gray-900 mb-2 flex justify-center mt-4'>Sunday Service</h2>
-                <p className="text-blue-600 mb-2 mt-3 pl-5">Every Sunday at 10:00 AM</p>
+                <p className="text-blue-600 mb-2 mt-3 pl-5">Every Sunday at 08:30 AM</p>
                 <p className="text-black mb-2 mt-3 pl-5">Join us for our weekly worship service.</p>
         </div>
         </div> 

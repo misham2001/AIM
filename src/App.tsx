@@ -6,6 +6,7 @@ import { PrayerRequest } from './components/PrayerRequest';
 import Footer from './components/Footer';
 import PhotoGallery from './components/PhotoGallery';
 import { TextParallaxContentExample } from './components/TextParallaxContentExample';
+import Gallery from './components/Gallery';
 
 function App() {
   return (
@@ -15,13 +16,16 @@ function App() {
         <section id="home">
           <Hero />
         </section>
-        <section id="events" className="py-16">
+        <section id="events" className="">
           <Events />
         </section>
-        <section id="photoGallery" className="">
+        <section id="photoGallery" className="py-16">
           <PhotoGallery/>
         </section>
-        <section id="photoGallery" className="py-16">
+        <section id="" className="py-16">
+          <Gallery/>
+        </section>
+        <section id="" className="bg-gray-10  0">
           <TextParallaxContentExample/>
         </section>
         <section id="prayer-request" className="bg-gray-50 ">

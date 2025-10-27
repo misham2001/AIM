@@ -17,7 +17,8 @@ export function Navbar() {
   return (
     <nav className="bg-white shadow-lg fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between items-center h-20">
+          {/* Left side - Church logo and name */}
           <div className="flex items-center">
             <button onClick={() => scrollToSection('home')} className="flex items-center space-x-2">
               <Church className="h-8 w-8 text-blue-600" />
@@ -27,34 +28,33 @@ export function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a onClick={() => scrollToSection('events')} className="group relative inline-block mr-5 p-2.5 outline-none no-underline bg-gradient-to-br from-purple-500 to-red-500 text-lg text-transparent bg-clip-text tracking-wide focus:outline-none transition-all duration-300 transform hover:from-gray-700 hover:to-gray-700">
-              {/* a::before */}
+            <a onClick={() => scrollToSection('events')} className="group relative inline-block p-2.5 outline-none no-underline bg-gradient-to-br from-purple-500 to-red-500 text-lg text-transparent bg-clip-text tracking-wide focus:outline-none transition-all duration-300 transform hover:from-gray-700 hover:to-gray-700 cursor-pointer">
               <span className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-br from-purple-500 to-red-500 opacity-0 transition-all duration-300 transform -translate-y-2.5 group-hover:opacity-100 group-hover:translate-y-0" aria-hidden="true" />
               Events
-              {/* a::after */}
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-br from-purple-500 to-red-500 opacity-0 transition-all duration-300 transform translate-y-2.5 group-hover:opacity-100 group-hover:translate-y-0" aria-hidden="true" />
             </a>
 
-            <a onClick={() => scrollToSection('prayer-request')} className="group relative inline-block mr-5 p-2.5 outline-none no-underline bg-gradient-to-br from-purple-500 to-red-500 text-lg text-transparent bg-clip-text tracking-wide focus:outline-none transition-all duration-300 transform hover:from-gray-700 hover:to-gray-700">
-              {/* a::before */}
+            <a onClick={() => scrollToSection('prayer-request')} className="group relative inline-block p-2.5 outline-none no-underline bg-gradient-to-br from-purple-500 to-red-500 text-lg text-transparent bg-clip-text tracking-wide focus:outline-none transition-all duration-300 transform hover:from-gray-700 hover:to-gray-700 cursor-pointer">
               <span className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-br from-purple-500 to-red-500 opacity-0 transition-all duration-300 transform -translate-y-2.5 group-hover:opacity-100 group-hover:translate-y-0" aria-hidden="true" />
               Prayer Request
-              {/* a::after */}
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-br from-purple-500 to-red-500 opacity-0 transition-all duration-300 transform translate-y-2.5 group-hover:opacity-100 group-hover:translate-y-0" aria-hidden="true" />
             </a>
 
-            <a onClick={() => scrollToSection('photoGallery')} className="group relative inline-block mr-5 p-2.5 outline-none no-underline bg-gradient-to-br from-purple-500 to-red-500 text-lg text-transparent bg-clip-text tracking-wide focus:outline-none transition-all duration-300 transform hover:from-gray-700 hover:to-gray-700">
-              {/* a::before */}
+            <a onClick={() => scrollToSection('photoGallery')} className="group relative inline-block p-2.5 outline-none no-underline bg-gradient-to-br from-purple-500 to-red-500 text-lg text-transparent bg-clip-text tracking-wide focus:outline-none transition-all duration-300 transform hover:from-gray-700 hover:to-gray-700 cursor-pointer">
               <span className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-br from-purple-500 to-red-500 opacity-0 transition-all duration-300 transform -translate-y-2.5 group-hover:opacity-100 group-hover:translate-y-0" aria-hidden="true" />
               Photo Gallery
-              {/* a::after */}
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-br from-purple-500 to-red-500 opacity-0 transition-all duration-300 transform translate-y-2.5 group-hover:opacity-100 group-hover:translate-y-0" aria-hidden="true" />
             </a>
-            <img src={logo} alt="logo" className="h-20 w-auto rounded-2xl" />
+
+            {/* Logo image - properly aligned */}
+            <div className="flex items-center">
+              <img src={logo} alt="logo" className="h-16 w-auto rounded-2xl object-contain" />
+            </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile Menu Button and Logo */}
+          <div className="md:hidden flex items-center space-x-3">
+            <img src={logo} alt="logo" className="h-12 w-auto rounded-lg object-contain" />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-600 hover:text-gray-900 focus:outline-none"
@@ -75,8 +75,8 @@ export function Navbar() {
             <button onClick={() => scrollToSection('prayer-request')} className="block w-full text-left px-3 py-2 text-gray-600 hover:text-blue-600">
               Prayer Request
             </button>
-            <button onClick={() => scrollToSection('contact')} className="block w-full text-left px-3 py-2 text-gray-600 hover:text-blue-600">
-              Contact Us
+            <button onClick={() => scrollToSection('photoGallery')} className="block w-full text-left px-3 py-2 text-gray-600 hover:text-blue-600">
+              Photo Gallery
             </button>
           </div>
         </div>
