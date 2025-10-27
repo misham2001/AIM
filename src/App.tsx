@@ -16,23 +16,23 @@ function App() {
         <section id="home">
           <Hero />
         </section>
-        <section id="events" className="">
+        <section id="events">
           <Events />
         </section>
-        <section id="photoGallery" className="py-16">
+        <section id="photoGallery" className="pt-10">
+          <h1 className="mb-4 text-center text-4xl font-extrabold leading-none tracking-tight bg-gradient-to-r from-cyan-400 via-blue-600 to-pink-500 bg-clip-text text-transparent md:text-5xl lg:text-6xl">Photo Gallery</h1>
           <PhotoGallery/>
         </section>
-        <section id="" className="py-16">
+        <section className="pb-32">
           <Gallery/>
         </section>
-        <section id="" className="bg-gray-10  0">
+        <section>
           <TextParallaxContentExample/>
         </section>
-        <section id="prayer-request" className="bg-gray-50 ">
+        <section id="prayer-request" className="bg-gray-50">
           <PrayerRequest />
         </section>
-      
-        <section id="footer" className="">
+        <section id="footer">
           <Footer/>
         </section>
       </main>

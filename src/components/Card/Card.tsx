@@ -31,7 +31,6 @@ const StyledWrapper = styled.div`
     align-items: center;
     justify-content: center;
     box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
-    ;
   }
 
   .bg {

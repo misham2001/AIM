@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 
-import Scroll from "../Assert/Image/Scroll.jpg"
-import Scroll1 from "../Assert/Image/Scroll1.jpg"
-import Scroll2 from "../Assert/Image/Scroll2.jpg"
+import Scroll from "../Assert/Image/Scroll.jpg";
+import Scroll1 from "../Assert/Image/Scroll1.jpg";
+import Scroll2 from "../Assert/Image/Scroll2.jpg";
 
 export function Hero() {
   const images = [
     Scroll,
-    Scroll1,Scroll2,
+    Scroll1,
+    Scroll2,
     "https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&q=80",
   ];
 
@@ -16,7 +17,7 @@ export function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // 10 seconds
+    }, 5000);
     return () => clearInterval(interval);
   }, [images.length]);
 

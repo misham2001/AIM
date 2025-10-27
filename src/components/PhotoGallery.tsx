@@ -52,14 +52,6 @@ const PhotoGallery = () => {
     }
   };
 
-  // const goTo = (index: number) => {
-  //   if (index <= slides.length - visibleSlides) {
-  //     setCurrentSlide(index);
-  //   } else {
-  //     setCurrentSlide(slides.length - visibleSlides);
-  //   }
-  // };
-
   const handleImageError = (slide: typeof slides[0]) => {
     slide.image = 'https://picsum.photos/id/20/800/600';
   };
@@ -114,19 +106,6 @@ const PhotoGallery = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
-
-          {/* <div className="flex justify-center mt-4 space-x-2">
-            {slides.map((slide, index) => (
-              <button
-                key={slide.id}
-                onClick={() => goTo(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  currentSlide === index ? 'bg-blue-600' : 'bg-gray-300'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div> */}
         </div>
       </div>
     </div>
@@ -134,6 +113,3 @@ const PhotoGallery = () => {
 };
 
 export default PhotoGallery;
-
-
-

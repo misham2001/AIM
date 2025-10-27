@@ -146,7 +146,7 @@ interface MediaProps {
   renderer: Renderer;
   scene: Transform;
   screen: ScreenSize;
-  text: string;
+  text?: string;
   viewport: Viewport;
   bend: number;
   textColor: string;
@@ -164,7 +164,7 @@ class Media {
   renderer: Renderer;
   scene: Transform;
   screen: ScreenSize;
-  text: string;
+  text: string | undefined;
   viewport: Viewport;
   bend: number;
   textColor: string;
@@ -214,7 +214,7 @@ class Media {
     this.font = font;
     this.createShader();
     this.createMesh();
-    this.createTitle();
+    // this.createTitle(); // Commented out to remove text labels
     this.onResize();
   }
 
@@ -302,6 +302,7 @@ class Media {
   }
 
   createTitle() {
+    if (!this.text) return;
     this.title = new Title({
       gl: this.gl,
       plane: this.plane,
@@ -374,7 +375,7 @@ class Media {
 }
 
 interface AppConfig {
-  items?: { image: string; text: string }[];
+  items?: { image: string; text?: string }[];
   bend?: number;
   textColor?: string;
   borderRadius?: number;
@@ -400,7 +401,7 @@ class App {
   scene!: Transform;
   planeGeometry!: Plane;
   medias: Media[] = [];
-  mediasImages: { image: string; text: string }[] = [];
+  mediasImages: { image: string; text?: string }[] = [];
   screen!: { width: number; height: number };
   viewport!: { width: number; height: number };
   raf: number = 0;
@@ -470,60 +471,48 @@ class App {
   }
 
   createMedias(
-    items: { image: string; text: string }[] | undefined,
+    items: { image: string; text?: string }[] | undefined,
     bend: number = 1,
     textColor: string,
     borderRadius: number,
     font: string
   ) {
-    const defaultItems = [
+    const defaultItems: { image: string; text?: string }[] = [
       {
-        image: `https://picsum.photos/seed/1/800/600?grayscale`,
-        text: 'Bridge'
+        image: `https://picsum.photos/seed/1/800/600`,
       },
       {
-        image: `https://picsum.photos/seed/2/800/600?grayscale`,
-        text: 'Desk Setup'
+        image: `https://picsum.photos/seed/2/800/600`,
       },
       {
-        image: `https://picsum.photos/seed/3/800/600?grayscale`,
-        text: 'Waterfall'
+        image: `https://picsum.photos/seed/3/800/600`,
       },
       {
-        image: `https://picsum.photos/seed/4/800/600?grayscale`,
-        text: 'Strawberries'
+        image: `https://picsum.photos/seed/4/800/600`,
       },
       {
-        image: `https://picsum.photos/seed/5/800/600?grayscale`,
-        text: 'Deep Diving'
+        image: `https://picsum.photos/seed/5/800/600`,
       },
       {
-        image: `https://picsum.photos/seed/16/800/600?grayscale`,
-        text: 'Train Track'
+        image: `https://picsum.photos/seed/16/800/600`,
       },
       {
-        image: `https://picsum.photos/seed/17/800/600?grayscale`,
-        text: 'Santorini'
+        image: `https://picsum.photos/seed/17/800/600`,
       },
       {
-        image: `https://picsum.photos/seed/8/800/600?grayscale`,
-        text: 'Blurry Lights'
+        image: `https://picsum.photos/seed/8/800/600`,
       },
       {
-        image: `https://picsum.photos/seed/9/800/600?grayscale`,
-        text: 'New York'
+        image: `https://picsum.photos/seed/9/800/600`,
       },
       {
-        image: `https://picsum.photos/seed/10/800/600?grayscale`,
-        text: 'Good Boy'
+        image: `https://picsum.photos/seed/10/800/600`,
       },
       {
-        image: `https://picsum.photos/seed/21/800/600?grayscale`,
-        text: 'Coastline'
+        image: `https://picsum.photos/seed/21/800/600`,
       },
       {
-        image: `https://picsum.photos/seed/12/800/600?grayscale`,
-        text: 'Palm Trees'
+        image: `https://picsum.photos/seed/12/800/600`,
       }
     ];
     const galleryItems = items && items.length ? items : defaultItems;
@@ -538,7 +527,7 @@ class App {
         renderer: this.renderer,
         scene: this.scene,
         screen: this.screen,
-        text: data.text,
+        text: data.text || '',
         viewport: this.viewport,
         bend,
         textColor,
@@ -645,7 +634,7 @@ class App {
 }
 
 interface CircularGalleryProps {
-  items?: { image: string; text: string }[];
+  items?: { image: string; text?: string }[];
   bend?: number;
   textColor?: string;
   borderRadius?: number;
