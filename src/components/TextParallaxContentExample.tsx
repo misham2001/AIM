@@ -10,13 +10,13 @@ export const TextParallaxContentExample = () => {
       <TextParallaxContent
         imgUrl={Outreach}
         subheading="Our Activity"
-        heading="Outreach Program" 
+        heading="Outreach Program"
       >
         <OutreachContent />
       </TextParallaxContent>
 
       <TextParallaxContent
-       imgUrl={Ministry}
+        imgUrl={Ministry}
         subheading="Bastar Ministry"
         heading="Community Impact"
       >
@@ -54,7 +54,7 @@ const TextParallaxContent = ({
         paddingRight: IMG_PADDING,
       }}
     >
-      <div className="relative h-[150vh]">
+      <div className="relative h-[70vh] md:h-[100vh]">
         <StickyImage imgUrl={imgUrl} />
         <OverlayCopy heading={heading} subheading={subheading} />
       </div>
@@ -79,12 +79,11 @@ const StickyImage = ({ imgUrl }: { imgUrl: string }) => {
         backgroundImage: `url(${imgUrl})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: `calc(80vh - ${IMG_PADDING * 2}px)`,
         top: IMG_PADDING,
         scale,
       }}
       ref={targetRef}
-      className="sticky z-0 overflow-hidden rounded-3xl"
+      className="sticky z-0 overflow-hidden rounded-3xl h-[50vh] md:h-[60vh]"
     >
       <motion.div
         className="absolute inset-0 bg-neutral-950/70"

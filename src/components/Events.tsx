@@ -2,7 +2,7 @@ import Card from "./Card/Card";
 
 export function Events() {
   const events = [
-    
+
     {
       title: 'Youth Meeting',
       date: 'Every Sunday',
@@ -16,7 +16,7 @@ export function Events() {
       place: 'Perumbakkam',
       description: ''
     },
-     {
+    {
       title: 'Sunday School',
       date: 'Every Sunday',
       time: '5:00 PM',
@@ -50,7 +50,7 @@ export function Events() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
       <h2
         className="origin-bottom-left whitespace-nowrap text-4xl font-black uppercase leading-tight sm:text-5xl md:text-6xl md:leading-[1.1] lg:text-2xl lg:leading-[1.1] xl:text-4xl xl:leading-[1.1]"
       >Our schedule

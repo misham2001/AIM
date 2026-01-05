@@ -40,7 +40,7 @@ export function PrayerRequest() {
 
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <div className="container mx-auto px-4  sm:px-6 lg:px-8">
+    <div className="container mx-auto px-4  sm:px-6 lg:px-8 mt-10">
       <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">Contact</h2>
 
       <div className="grid lg:grid-cols-2 gap-8 items-start justify-center mb-10">
@@ -170,7 +170,7 @@ export function PrayerRequest() {
 
                 <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between">
                   <button className="bg-white text-[#fbb9b6] border-none rounded-[20px] text-xs px-3 py-1 shadow-[rgba(165,132,130,0.1333333333)_0px_5px_5px_0px] hover:bg-[#f55d56] hover:text-white transition-all duration-500">
-                    hover here
+                    Pastor
                   </button>
                 </div>
               </div>

@@ -22,9 +22,9 @@ export function Hero() {
   }, [images.length]);
 
   return (
-    <div className="container mx-auto px-4 relative pt-16">
+    <div className="w-full relative pt-16">
       <div
-        className="h-[650px] bg-cover bg-center transition-all duration-1000"
+        className="h-[650px] w-full bg-cover bg-center transition-all duration-1000"
         style={{
           backgroundImage: `url("${images[currentIndex]}")`,
         }}
