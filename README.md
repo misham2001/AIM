@@ -1,10 +1,10 @@
 # 🙏 Ashwas Church of God - Ministry Website
 
-A modern, responsive church website built with React, TypeScript, and Vite. Features an interactive photo gallery, event listings, and a prayer request submission system with email notifications.
+A modern, responsive church website built with Next.js, React, and TypeScript. Features an interactive photo gallery, event listings, and a prayer request submission system with email notifications via Next.js API routes.
 
+![Next.js](https://img.shields.io/badge/Next.js-14.2.0-000000?style=flat&logo=next.js)
 ![React](https://img.shields.io/badge/React-18.3.1-61DAFB?style=flat&logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-3178C6?style=flat&logo=typescript)
-![Vite](https://img.shields.io/badge/Vite-5.4.2-646CFF?style=flat&logo=vite)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat&logo=typescript)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4.1-06B6D4?style=flat&logo=tailwindcss)
 
 ---
@@ -15,30 +15,30 @@ A modern, responsive church website built with React, TypeScript, and Vite. Feat
 - **📅 Events** - Display upcoming church events
 - **📸 Photo Gallery** - Interactive circular gallery with smooth animations
 - **🙏 Prayer Request** - Submit prayer requests via contact form
-- **📧 Email Notifications** - Backend service sends prayer requests to church email
+- **📧 Email Notifications** - API routes send prayer requests to church email
 - **📱 Responsive Design** - Optimized for all screen sizes
+- **⚡ Server-Side Rendering** - Fast page loads with Next.js SSR
+- **🖼️ Image Optimization** - Automatic image optimization with Next.js Image component
 
 ---
 
 ## 🏗️ Tech Stack
 
-### Frontend
+### Frontend & Backend
 | Technology | Purpose |
 |------------|---------|
+| Next.js 14 | Full-stack React Framework (App Router) |
 | React 18 | UI Framework |
 | TypeScript | Type Safety |
-| Vite | Build Tool & Dev Server |
-| TailwindCSS | Styling |
-| Framer Motion | Animations |
-| React Router | Navigation |
+| TailwindCSS | Styling & Design System |
+| Framer Motion | Smooth Animations |
+| Lucide React | Modern Icons |
 
-### Backend
+### Email Service
 | Technology | Purpose |
 |------------|---------|
-| Express.js | Server Framework |
-| Nodemailer | Email Service |
-| dotenv | Environment Variables |
-| CORS | Cross-Origin Requests |
+| Nodemailer | Email Delivery |
+| Next.js API Routes | Serverless API Endpoints |
 
 ---
 
@@ -46,31 +46,32 @@ A modern, responsive church website built with React, TypeScript, and Vite. Feat
 
 ```
 AIM/
-├── src/
+├── app/
 │   ├── components/
-│   │   ├── Navbar.tsx          # Navigation bar
-│   │   ├── Hero.tsx            # Hero section with image carousel
-│   │   ├── Events.tsx          # Events display
-│   │   ├── PhotoGallery.tsx    # Photo gallery component
-│   │   ├── CircularGallery.tsx # Animated circular gallery
-│   │   ├── Gallery.tsx         # Gallery wrapper
-│   │   ├── PrayerRequest.tsx   # Prayer request form
-│   │   ├── Footer.tsx          # Site footer
-│   │   └── TextParallaxContentExample.tsx
-│   ├── Assert/
-│   │   └── Image/              # Local images
-│   ├── App.tsx                 # Main app component
-│   ├── main.tsx                # Entry point
-│   └── index.css               # Global styles
-├── backend/
-│   ├── server.js               # Express server
-│   ├── .env                    # Environment variables
-│   └── package.json            # Backend dependencies
-├── index.html                  # HTML entry
-├── package.json                # Frontend dependencies
-├── tailwind.config.js          # Tailwind configuration
-├── vite.config.ts              # Vite configuration
-└── tsconfig.json               # TypeScript configuration
+│   │   ├── Navbar.tsx                    # Navigation bar
+│   │   ├── Hero.tsx                      # Hero section with carousel
+│   │   ├── Events.tsx                    # Events display
+│   │   ├── PhotoGallery.tsx              # Photo gallery component
+│   │   ├── Gallery.tsx                   # Gallery wrapper
+│   │   ├── PrayerRequest.tsx             # Prayer request form
+│   │   ├── Footer.tsx                    # Site footer
+│   │   ├── TextParallaxContentExample.tsx
+│   │   └── Card/
+│   │       └── Card.tsx                  # Reusable card component
+│   ├── api/
+│   │   └── send-email/
+│   │       └── route.ts                  # Email API endpoint
+│   ├── layout.tsx                        # Root layout
+│   ├── page.tsx                          # Home page
+│   └── globals.css                       # Global styles
+├── public/
+│   ├── logo.png                          # Church logo
+│   └── *.jpg                             # Hero carousel images
+├── .env.local                            # Environment variables
+├── package.json                          # Dependencies
+├── tailwind.config.ts                    # Tailwind configuration
+├── next.config.mjs                       # Next.js configuration
+└── tsconfig.json                         # TypeScript configuration
 ```
 
 ---
@@ -80,7 +81,7 @@ AIM/
 ### Prerequisites
 
 - Node.js (v18 or higher)
-- npm or yarn
+- npm, yarn, or pnpm
 
 ### Installation
 
@@ -90,21 +91,14 @@ AIM/
    cd AIM
    ```
 
-2. **Install frontend dependencies**
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. **Install backend dependencies**
-   ```bash
-   cd backend
-   npm install
-   cd ..
-   ```
-
-4. **Configure environment variables**
+3. **Configure environment variables**
    
-   Create/update `backend/.env` file:
+   Create `.env.local` file in the root directory:
    ```env
    EMAIL_USER=your-email@gmail.com
    EMAIL_PASS=your-app-password
@@ -116,41 +110,37 @@ AIM/
 
 ## 💻 Running the Application
 
-### Start the Frontend (Development Server)
+### Development Server
 
 ```bash
 npm run dev
 ```
 
-The frontend will be available at `http://localhost:5173`
+The application will be available at `http://localhost:3000`
 
-### Start the Backend (Email Server)
+### Production Build
 
 ```bash
-cd backend
-node server.js
+npm run build
+npm start
 ```
-
-The backend API will be available at `http://localhost:5000`
 
 ---
 
 ## 📜 Available Scripts
 
-### Frontend
-
 | Command | Description |
 |---------|-------------|
-| `npm run dev` | Start development server |
+| `npm run dev` | Start Next.js development server |
 | `npm run build` | Build for production |
-| `npm run preview` | Preview production build |
+| `npm start` | Start production server |
 | `npm run lint` | Run ESLint |
 
 ---
 
-## 🔌 API Endpoints
+## 🔌 API Routes
 
-### POST `/send-email`
+### POST `/api/send-email`
 
 Sends a prayer request email to the church.
 
@@ -174,9 +164,10 @@ Sends a prayer request email to the church.
 
 ## 🎨 Customization
 
-- **Colors & Theme**: Modify `tailwind.config.js`
-- **Hero Images**: Update images in `src/Assert/Image/` and `src/components/Hero.tsx`
-- **Church Email**: Update the recipient email in `backend/server.js`
+- **Colors & Theme**: Modify `tailwind.config.ts`
+- **Hero Images**: Add images to `/public` and update `app/components/Hero.tsx`
+- **Church Email**: Update the recipient email in `app/api/send-email/route.ts`
+- **Site Metadata**: Update `app/layout.tsx` for SEO settings
 
 ---
 
