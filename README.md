@@ -55,7 +55,8 @@ AIM/
 │   │   ├── Gallery.tsx                   # Gallery wrapper
 │   │   ├── PrayerRequest.tsx             # Prayer request form
 │   │   ├── Footer.tsx                    # Site footer
-│   │   ├── TextParallaxContentExample.tsx
+│   │   ├── MinistryGallery.tsx           # Ministry gallery with CTA
+
 │   │   └── Card/
 │   │       └── Card.tsx                  # Reusable card component
 │   ├── api/

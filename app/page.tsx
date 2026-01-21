@@ -4,10 +4,9 @@ import { Events } from '@/app/components/Events';
 import { PrayerRequest } from '@/app/components/PrayerRequest';
 import Footer from '@/app/components/Footer';
 import PhotoGallery from '@/app/components/PhotoGallery';
-import { TextParallaxContentExample } from '@/app/components/TextParallaxContentExample';
 import Gallery from '@/app/components/Gallery';
-import ImageContentSection from '@/app/components/ImageContentSection';
-import { imageSectionData } from '@/app/data/sectionData';
+import { MinistryGallery } from '@/app/components/MinistryGallery';
+
 
 export default function Home() {
     return (
@@ -27,11 +26,9 @@ export default function Home() {
                 <section className="pb-32">
                     <Gallery />
                 </section>
+
                 <section>
-                    <ImageContentSection {...imageSectionData.ministry} />
-                </section>
-                <section>
-                    <TextParallaxContentExample />
+                    <MinistryGallery />
                 </section>
                 <section id="prayer-request" className="bg-gray-50">
                     <PrayerRequest />
