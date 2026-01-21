@@ -21,9 +21,10 @@ export function Hero() {
     return (
         <div className="w-full relative pt-16">
             <div
-                className="h-[650px] w-full bg-cover bg-center transition-all duration-1000"
+                className="h-[750px] w-full bg-cover transition-all duration-1000"
                 style={{
                     backgroundImage: `url("${images[currentIndex]}")`,
+                    backgroundPosition: 'center 20%',
                 }}
             >
                 <div className="absolute inset-0 bg-black bg-opacity-50" />

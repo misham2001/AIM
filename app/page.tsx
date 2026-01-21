@@ -6,6 +6,7 @@ import Footer from '@/app/components/Footer';
 import PhotoGallery from '@/app/components/PhotoGallery';
 import Gallery from '@/app/components/Gallery';
 import { MinistryGallery } from '@/app/components/MinistryGallery';
+import { BasarMinistrySection } from '@/app/components/BasarMinistrySection';
 
 
 export default function Home() {
@@ -28,8 +29,13 @@ export default function Home() {
                 </section>
 
                 <section>
+                    <BasarMinistrySection />
+                </section>
+
+                <section>
                     <MinistryGallery />
                 </section>
+
                 <section id="prayer-request" className="bg-gray-50">
                     <PrayerRequest />
                 </section>
